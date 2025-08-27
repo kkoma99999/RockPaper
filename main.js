@@ -12,9 +12,20 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    return prompt("Enter rock, paper, or scissors:").toLowerCase();
-}
+const rock = document.getElementById("rock");
+  rock.addEventListener("click", () => {
+    playRound("rock",getComputerChoice())
+  });
+
+const paper = document.getElementById("paper");
+  paper.addEventListener("click", () => {
+    playRound("paper",getComputerChoice())
+  });  
+
+const sessior = document.getElementById("sessior");
+  sessior.addEventListener("click", () => {
+    playRound("scissors",getComputerChoice())
+  });  
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -32,11 +43,5 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// Run one round
-let human = getHumanChoice();
-let computer = getComputerChoice();
 
-playRound(human, computer);
 
-console.log(`Human Score: ${humanScore}`);
-console.log(`Computer Score: ${computerScore}`);
